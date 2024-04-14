@@ -6,8 +6,12 @@
 class Grid {
 public:
 
+    // Constructor with no arguments. 
+    //Initializes Grid with default values
+    Grid(){}
+
     // Constructor with specified voltage and frequency. Initializes energy sold and bought to 0.
-    Grid(double Voltage, double Freq): energySold_(0.0), energyBought_(0.0), voltage_(Voltage), frequency_(Freq){}
+    Grid(double Voltage, double Freq): voltage_(Voltage), frequency_(Freq){}
 
     // Gets the amount of energy sold to grid in Watts.
     double getEnergySold() const;

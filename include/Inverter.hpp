@@ -8,11 +8,11 @@ public:
 
     // Constructor with mode as an argument. 
     //Initializes storage with the mode and grid frequency, grid voltage, and battery current to 0.0.
-    Inverter(int mode) : storage_(mode), GridFrequency_(0.0), GridVoltage_(0.0), batteryCurrent_(0.0){}
+    Inverter(int mode) : storage_(mode){}
     
     // Constructor with mode and number of battery modules as arguments. 
     //Initializes storage, grid frequency, grid voltage, and battery current.
-    Inverter(int mode, int numBatteries) : storage_(mode, numBatteries), GridFrequency_(0.0), GridVoltage_(0.0), batteryCurrent_(0.0){}
+    Inverter(int mode, int numBatteries) : storage_(mode, numBatteries){}
 
     // Controls the energy flow to/from the storage
     //Returns the remaining energy that could not be stored or extracted.
@@ -64,11 +64,11 @@ public:
 private:
     Storage storage_;
 
-    double GridFrequency_;      // Current grid frequency
-    double GridVoltage_;        // Current grid voltage
     double maxChargePower_;     // Maximun power system can charge
     double maxDischargePower_;  // Maximun power system can discharge
-    double batteryCurrent_;     // Number of battery modules in the system.
+    double batteryCurrent_ = 0.0;     // Current of battery modules in the system.
+    double GridFrequency_ = 0.0;      // Current grid frequency
+    double GridVoltage_ = 0.0;        // Current grid voltage
 
     // Returns free power capacity
     double getFreePowerCapacity(){

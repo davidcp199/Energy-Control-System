@@ -4,10 +4,6 @@
 class House {
 public:
 
-    // House Constructor. 
-    // Initializes power consume, voltage, frequency, and current to 0.
-    House(): powerIn_(0.0), voltage_(0.0), frequency_(0.0), current_(0.0){}
-
     // Gets the amount of power entering the house in Watts.
     double getPowerIn() const;
 
@@ -33,10 +29,10 @@ public:
     void setCurrent(double current);
 
 private:
-    double powerIn_;     // Amount of energy entering the house in Watts
-    double voltage_;     // Voltage entering to the house in Volts.
-    double frequency_;   // Frequency entering to the house in Hertz.
-    double current_;     // Current entering to the house in Amps.
+    double powerIn_ = 0.0;     // Amount of energy entering the house in Watts
+    double voltage_ = 0.0;     // Voltage entering to the house in Volts.
+    double frequency_ = 0.0;   // Frequency entering to the house in Hertz.
+    double current_ = 0.0;     // Current entering to the house in Amps.
 };
 
 #endif

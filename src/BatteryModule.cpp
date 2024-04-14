@@ -30,7 +30,7 @@ void BatteryModule::setVoltage(double voltage) {
 
 void BatteryModule::setMaxPower(double maxPower) {
     if (maxPower < 0.0 || maxPower > MAX_BATTERY_POWER) {
-        throw std::invalid_argument("Maximum power cannot be negative.");
+        throw std::invalid_argument("Maximum power is out of the allowed range.");
     }
 
     maxPower_ = maxPower;
