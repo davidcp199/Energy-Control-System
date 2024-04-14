@@ -5,7 +5,7 @@ class PhotovoltaicPanel {
 public:
     
     // Constructor with no arguments. Initializes voltage, current, and power produced to 0.0.
-    PhotovoltaicPanel(): voltage_(0.0), current_(0.0), powerProduced_(0.0){};
+    PhotovoltaicPanel(){};
 
     // Constructor with specified voltage and current. Initializes voltage, current, and calculates power produced.
     PhotovoltaicPanel(double Voltage, double Current): voltage_(Voltage), current_(Current), powerProduced_(Voltage * Current){};
@@ -23,9 +23,9 @@ public:
     void setVoltageCurrent(double Voltage, double Current);
 
 private:
-    double voltage_;        // Produced voltage in Volts
-    double current_;        // Produced current in Amps
-    double powerProduced_;  // Amount of energy produced in Watts
+    double voltage_ = 0.0;        // Produced voltage in Volts
+    double current_ = 0.0;        // Produced current in Amps
+    double powerProduced_ = 0.0;  // Amount of energy produced in Watts
 
     void updatePowerProduced() {
         powerProduced_ = voltage_ * current_;

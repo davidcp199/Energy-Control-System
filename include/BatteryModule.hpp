@@ -6,7 +6,7 @@
 
 class BatteryModule {
 public:
-
+    BatteryModule(){};
     // Returns Temperature of the Battery Module
     double getTemperature() const;
 

@@ -1,15 +1,17 @@
 #ifndef GRID_HPP
 #define GRID_HPP
 
+#include "params.hpp"
+
 class Grid {
 public:
 
     // Constructor with no arguments. 
-    //Initializes energy sold and energy bought to 0, voltage = 220 V, and frequency = 60 Hz.
-    Grid(): energySold_(0.0), energyBought_(0.0), voltage_(220.0), frequency_(60.0){}
+    //Initializes Grid with default values
+    Grid(){}
 
     // Constructor with specified voltage and frequency. Initializes energy sold and bought to 0.
-    Grid(double Voltage, double Freq): energySold_(0.0), energyBought_(0.0), voltage_(Voltage), frequency_(Freq){}
+    Grid(double Voltage, double Freq): voltage_(Voltage), frequency_(Freq){}
 
     // Gets the amount of energy sold to grid in Watts.
     double getEnergySold() const;
@@ -36,10 +38,10 @@ public:
     void setFrequency(double frequency);
 
 private:
-    double energySold_;    // Amount of energy sold to the grid in Watts
-    double energyBought_;  // Amount of energy bought from the grid in Watts
-    double voltage_;       // Grid voltage in Volts
-    double frequency_;     // Grid frequency in Hertz
+    double energySold_ = 0.0;    // Amount of energy sold to the grid in Watts
+    double energyBought_ = 0.0;  // Amount of energy bought from the grid in Watts
+    double voltage_ = STANDARD_GRID_VOLTAGE;       // Grid voltage in Volts
+    double frequency_ = STANDARD_GRID_FREQUENCY;     // Grid frequency in Hertz
 };
 
 #endif
