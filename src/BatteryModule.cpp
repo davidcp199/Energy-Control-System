@@ -13,7 +13,7 @@ double BatteryModule::getMaxPower() const {
 }
 
 void BatteryModule::setTemperature(double temperature) {
-    if (temperature < -20.0 || temperature > 50.0) {
+    if (temperature < MIN_BATTERY_TEMPERATURE || temperature > MAX_BATTERY_TEMPERATURE) {
         throw std::invalid_argument("Temperature is out of the allowed range.");
     }
     
@@ -21,7 +21,7 @@ void BatteryModule::setTemperature(double temperature) {
 }
 
 void BatteryModule::setVoltage(double voltage) {
-    if (voltage < 0.0 || voltage > 230) {
+    if (voltage < 0.0 || voltage > MAX_BATTERY_VOLTAGE) {
         throw std::invalid_argument("Voltage cannot be negative or exceed 230 V.");
     }
 

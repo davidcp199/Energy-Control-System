@@ -2,15 +2,10 @@
 #define BATTERYMODULE_HPP
 
 #include <stdexcept>
+#include "params.hpp"
 
 class BatteryModule {
 public:
-
-    // Constructor with default values 
-    //  - Temperature_  = 15.0 ºC
-    //  - voltage = 24.0 V
-    //  - Maximun charge/discharge Power = 200.0 W
-    BatteryModule(): temperature_(15.0), voltage_(24.0), maxPower_(200.0) {}
 
     // Returns Temperature of the Battery Module
     double getTemperature() const;
@@ -31,9 +26,9 @@ public:
     void setMaxPower(double maxPower);
 
 private:
-    double temperature_;    // Temperature of the Battery Module in Celsius degrees
-    double voltage_;       // Voltage of the module in Volts
-    double maxPower_;      // Maximum charge/discharge power of the module in Watts
+    double temperature_ = STANDARD_BATTERY_TEMPERATURE;    // Temperature of the Battery Module in Celsius degrees
+    double voltage_ = STANDARD_BATTERY_VOLTAGE;       // Voltage of the module in Volts
+    double maxPower_ = STANDARD_BATTERY_POWER;      // Maximum charge/discharge power of the module in Watts
 };
 
 #endif
