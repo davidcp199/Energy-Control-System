@@ -9,7 +9,7 @@ double Inverter::energyFlowBatteryModules(double power){
             return 0;
 
         }else{
-            batteryCurrent_ =storage_.manageBatteryModulesPower(maxChargePower_);
+            batteryCurrent_ = storage_.manageBatteryModulesPower(maxChargePower_);
             return power - maxChargePower_;
         }
 
